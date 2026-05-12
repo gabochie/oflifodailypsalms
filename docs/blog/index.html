@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — OFLIFO</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  .blog-page { max-width: 700px; margin: 0 auto; padding: 50px 24px; }
+  .blog-page h1 { font-size: 28px; margin-bottom: 4px; }
+  .blog-page .sub { color: #666; font-size: 15px; margin-bottom: 36px; }
+  .post-card { background: #fff; border-radius: 12px; padding: 24px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,.08); transition: transform .15s; }
+  .post-card:hover { transform: translateY(-2px); }
+  .post-card .date { font-size: 12px; color: #999; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+  .post-card h2 { font-size: 18px; margin-bottom: 6px; }
+  .post-card h2 a { color: #1b4332; text-decoration: none; }
+  .post-card h2 a:hover { color: #2d6a4f; text-decoration: underline; }
+  .post-card p { color: #555; font-size: 14px; line-height: 1.6; margin: 0; }
+  .back { display: inline-block; margin-bottom: 24px; color: #2d6a4f; text-decoration: none; font-size: 14px; }
+  .back:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+  <div class="blog-page">
+    <a href="../index.html" class="back">&larr; Back to OFLIFO</a>
+    <h1>Blog</h1>
+    <p class="sub">Find the right psalm for whatever you're facing — fear, gratitude, grief, protection, and more.</p>
+
+    <div id="post-list"></div>
+  </div>
+
+  <footer style="text-align:center;padding:24px;font-size:13px;color:rgba(255,255,255,0.6);background:#1a1a2e">
+    <p>&copy; <span id="year"></span> OFLIFO &middot; <a href="../privacy.html" style="color:rgba(255,255,255,0.6)">Privacy</a> &middot; <a href="../contact.html" style="color:rgba(255,255,255,0.6)">Contact</a></p>
+  </footer>
+
+  <script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  var posts = [
+    {
+      date: "May 12, 2026",
+      title: "Psalms for When You Are Afraid",
+      slug: "psalms-when-afraid",
+      tag: "Fear & Anxiety",
+      excerpt: "Fear comes for all of us. These psalms remind you that God is your refuge, strength, and ever-present help in trouble."
+    },
+    {
+      date: "May 12, 2026",
+      title: "Psalms for When You Need Protection",
+      slug: "psalms-for-protection",
+      tag: "Protection",
+      excerpt: "Whether physical danger or spiritual attack, these psalms are a shield of faith you can pray over your life and family."
+    },
+    {
+      date: "May 12, 2026",
+      title: "Psalms for Gratitude & Thanksgiving",
+      slug: "psalms-gratitude",
+      tag: "Gratitude",
+      excerpt: "A thankful heart changes everything. Pour out your gratitude with these psalms of praise and thanksgiving."
+    },
+    {
+      date: "May 12, 2026",
+      title: "Psalms for Grief & Loss",
+      slug: "psalms-grief",
+      tag: "Grief",
+      excerpt: "When words fail, the psalms speak. Find comfort and hope in these scriptures for seasons of mourning."
+    },
+    {
+      date: "May 12, 2026",
+      title: "Psalms for Strength & Courage",
+      slug: "psalms-strength",
+      tag: "Strength",
+      excerpt: "Feeling weak or weary? These psalms will renew your strength and remind you that God fights for you."
+    }
+  ];
+
+  var html = '';
+  posts.forEach(function(p) {
+    html += '<div class="post-card">';
+    html += '<div class="date">' + p.date + ' &middot; <span style="color:#2d6a4f">' + p.tag + '</span></div>';
+    html += '<h2><a href="posts/' + p.slug + '.html">' + p.title + '</a></h2>';
+    html += '<p>' + p.excerpt + '</p>';
+    html += '</div>';
+  });
+
+  if (posts.length === 0) {
+    html = '<div style="text-align:center;padding:40px 0;color:#999">No posts yet. Check back soon.</div>';
+  }
+
+  document.getElementById('post-list').innerHTML = html;
+  </script>
+</body>
+</html>
