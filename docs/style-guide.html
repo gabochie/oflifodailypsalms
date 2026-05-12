@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Style Guide — OFLIFO</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .guide { max-width: 800px; margin: 0 auto; padding: 40px 24px 80px; }
+  .guide h1 { font-size: 28px; margin-bottom: 4px; }
+  .guide .sub { color: #666; font-size: 14px; margin-bottom: 40px; }
+  .guide h2 { font-size: 18px; color: #1b4332; margin: 32px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #e8eceb; }
+  .guide h3 { font-size: 14px; color: #555; margin: 20px 0 8px; text-transform: uppercase; letter-spacing: .5px; }
+  .swatch-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+  .swatch { width: 140px; border-radius: 10px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .swatch-color { height: 60px; }
+  .swatch-label { padding: 8px 10px; background: #fff; font-size: 12px; }
+  .swatch-label strong { display: block; font-size: 13px; }
+  .type-sample { margin-bottom: 16px; }
+  .type-sample .label { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 2px; }
+  .btn-sample { display: inline-flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+  .space-sample { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
+  .space-sample .box { background: #d3f9d8; border-radius: 4px; }
+  .space-sample .label { font-size: 12px; color: #555; }
+  .logo-sample { font-size: 48px; margin-bottom: 4px; }
+  .logo-text { font-size: 32px; font-weight: 700; color: #1b4332; }
+  .back { display: inline-block; margin-bottom: 24px; color: #2d6a4f; text-decoration: none; font-size: 14px; }
+  .back:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+  <div class="guide">
+    <a href="index.html" class="back">&larr; Back to OFLIFO</a>
+    <h1>Style Guide</h1>
+    <p class="sub">Brand guidelines for OFLIFO &mdash; Daily Psalms</p>
+
+    <!-- Logo -->
+    <h2>Logo &amp; Brand Mark</h2>
+    <div style="background:#f8faf9;border-radius:12px;padding:32px;text-align:center;margin-bottom:16px">
+      <div class="logo-sample">&#x1F4D6;</div>
+      <div class="logo-text">OFLIFO</div>
+      <div style="font-size:14px;color:#888;margin-top:4px">Daily Psalms</div>
+    </div>
+
+    <!-- Colors -->
+    <h2>Colors</h2>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color" style="background:#1b4332"></div><div class="swatch-label"><strong>Dark Green</strong>#1b4332</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#2d6a4f"></div><div class="swatch-label"><strong>Primary Green</strong>#2d6a4f</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#40916c"></div><div class="swatch-label"><strong>Light Green</strong>#40916c</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#d3f9d8"></div><div class="swatch-label"><strong>Success BG</strong>#d3f9d8</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#e8f5e9"></div><div class="swatch-label"><strong>Info BG</strong>#e8f5e9</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#1a1a2e"></div><div class="swatch-label"><strong>Footer BG</strong>#1a1a2e</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#f0f2f5"></div><div class="swatch-label"><strong>Page BG</strong>#f0f2f5</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#e03131"></div><div class="swatch-label"><strong>Danger</strong>#e03131</div></div>
+    </div>
+
+    <!-- Typography -->
+    <h2>Typography</h2>
+    <h3>Font Stack</h3>
+    <p style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;font-size:14px;color:#444">
+      -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif
+    </p>
+
+    <h3>Type Scale</h3>
+    <div class="type-sample"><div class="label">H1 / 36px</div><div style="font-size:36px;font-weight:700">The Lord is my shepherd</div></div>
+    <div class="type-sample"><div class="label">H2 / 22px</div><div style="font-size:22px;font-weight:700">Receive Daily Psalms</div></div>
+    <div class="type-sample"><div class="label">Body / 15px</div><div style="font-size:15px">Sign up to receive a daily verse on WhatsApp.</div></div>
+    <div class="type-sample"><div class="label">Small / 13px</div><div style="font-size:13px;color:#888">Footer links, metadata</div></div>
+    <div class="type-sample"><div class="label">Verse Text / 22px italic</div><div style="font-size:22px;font-style:italic">&ldquo;The Lord is my shepherd; I shall not want.&rdquo;</div></div>
+
+    <!-- Buttons -->
+    <h2>Buttons</h2>
+    <div class="btn-sample">
+      <button class="btn btn-primary">Sign Up</button>
+      <button class="btn btn-primary" disabled>Disabled</button>
+      <button class="btn btn-danger">Remove</button>
+      <button class="btn btn-outline" style="padding:10px 22px;border:1px solid #d4d4d4;border-radius:8px;font-size:14px;background:transparent;cursor:pointer">Cancel</button>
+    </div>
+
+    <!-- Spacing -->
+    <h2>Spacing</h2>
+    <div class="space-sample"><div class="box" style="width:4px;height:16px"></div><span class="label">4px (xs)</span></div>
+    <div class="space-sample"><div class="box" style="width:8px;height:16px"></div><span class="label">8px (sm)</span></div>
+    <div class="space-sample"><div class="box" style="width:16px;height:16px"></div><span class="label">16px (md)</span></div>
+    <div class="space-sample"><div class="box" style="width:24px;height:16px"></div><span class="label">24px (lg)</span></div>
+    <div class="space-sample"><div class="box" style="width:32px;height:16px"></div><span class="label">32px (xl)</span></div>
+
+    <!-- Cards -->
+    <h2>Cards</h2>
+    <div style="background:#fff;border-radius:12px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,.08);margin-bottom:8px">
+      <p style="font-size:14px;color:#444">Standard card with <code>border-radius: 12px</code> and light shadow.</p>
+    </div>
+
+    <!-- Voice -->
+    <h2>Brand Voice</h2>
+    <p style="font-size:14px;color:#444">Warm, spiritual, inviting. Use scripture references naturally. Avoid hype or pressure. Keep messaging simple and focused on the daily verse.</p>
+  </div>
+</body>
+</html>

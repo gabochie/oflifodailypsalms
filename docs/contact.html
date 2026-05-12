@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — OFLIFO</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .contact-page { max-width: 600px; margin: 0 auto; padding: 50px 24px; text-align: center; }
+  .contact-page h1 { font-size: 28px; margin-bottom: 8px; }
+  .contact-page .sub { color: #666; font-size: 15px; margin-bottom: 36px; }
+  .contact-card { background: #fff; border-radius: 16px; padding: 32px; box-shadow: 0 1px 3px rgba(0,0,0,.08); margin-bottom: 20px; }
+  .contact-card .icon { font-size: 32px; margin-bottom: 8px; }
+  .contact-card h2 { font-size: 16px; margin-bottom: 4px; color: #1b4332; }
+  .contact-card a { font-size: 18px; color: #2d6a4f; text-decoration: none; font-weight: 600; }
+  .contact-card a:hover { text-decoration: underline; }
+  .contact-card p { color: #888; font-size: 13px; margin-top: 4px; }
+  .back { display: inline-block; margin-bottom: 28px; color: #2d6a4f; text-decoration: none; font-size: 14px; }
+  .back:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+  <div class="contact-page">
+    <a href="index.html" class="back">&larr; Back to OFLIFO</a>
+    <h1>Contact Us</h1>
+    <p class="sub">Have a question or want to unsubscribe? Reach out anytime.</p>
+
+    <div class="contact-card">
+      <div class="icon">&#9993;</div>
+      <h2>Email</h2>
+      <a href="mailto:oflifogh@gmail.com">oflifogh@gmail.com</a>
+      <p>We'll respond within 24 hours</p>
+    </div>
+
+    <div class="contact-card">
+      <div class="icon">&#9742;</div>
+      <h2>Phone / WhatsApp</h2>
+      <a href="tel:+233257496966">+233 257 496 966</a>
+      <p>Call or send a message</p>
+    </div>
+  </div>
+
+  <footer style="text-align:center;padding:24px;font-size:13px;color:rgba(255,255,255,0.6);background:#1a1a2e">
+    <p>&copy; <span id="year"></span> OFLIFO. All rights reserved.</p>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OFLIFO — Daily Psalms</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="hero">
+    <div class="container">
+      <div class="logo">&#x1F4D6;</div>
+      <h1>OFLIFO</h1>
+      <p class="tagline">Daily Psalms &mdash; a verse delivered to your phone every day.</p>
+      <div class="verse-card" id="verse-card">
+        <div class="verse-text" id="verse-text">Loading today's verse...</div>
+        <div class="verse-ref" id="verse-ref"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <div class="two-col">
+        <div class="col">
+          <h2>Receive Daily Psalms</h2>
+          <p>Sign up to receive a daily verse on WhatsApp. One psalm per day, cycling through all 150.</p>
+          <form id="signup-form">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="e.g. John" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number (with country code)</label>
+              <input type="tel" id="phone" name="phone" placeholder="e.g. +233501234567" required>
+            </div>
+            <button type="submit" class="btn btn-primary" id="submit-btn">Sign Up</button>
+          </form>
+          <div id="form-feedback" class="feedback"></div>
+        </div>
+        <div class="col">
+          <h2>How It Works</h2>
+          <ul class="steps">
+            <li><span class="step-num">1</span> Enter your name and phone number above.</li>
+            <li><span class="step-num">2</span> You'll start receiving one Psalm verse daily on WhatsApp.</li>
+            <li><span class="step-num">3</span> Read, reflect, and share with friends and family.</li>
+          </ul>
+          <div class="info-box">
+            <strong>Free &amp; Private</strong>
+            <p>Your information is kept private and only used to send the daily verse. No spam, no ads.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section donate-section">
+    <div class="container" style="text-align:center">
+      <h2 style="margin-bottom:8px">&#x2764; Support OFLIFO</h2>
+      <p style="color:#444;font-size:15px;margin-bottom:16px">If this ministry blesses you, consider sending a gift via Mobile Money.</p>
+      <div style="display:inline-block;background:#2d6a4f;color:#fff;padding:16px 32px;border-radius:12px;font-size:20px;font-weight:700">
+        &#x1F4F1; +233 257 496 966
+      </div>
+      <p style="color:#888;font-size:13px;margin-top:12px">Mobile Money &middot; Any amount is appreciated</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="year"></span> OFLIFO. &ldquo;Let everything that has breath praise the Lord.&rdquo; &mdash; Psalm 150:6</p>
+      <p style="margin-top:10px;font-size:12px">
+        <a href="privacy.html" style="color:rgba(255,255,255,0.6);text-decoration:none">Privacy</a>
+        &nbsp;&middot;&nbsp;
+        <a href="terms.html" style="color:rgba(255,255,255,0.6);text-decoration:none">Terms</a>
+        &nbsp;&middot;&nbsp;
+        <a href="contact.html" style="color:rgba(255,255,255,0.6);text-decoration:none">Contact</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
