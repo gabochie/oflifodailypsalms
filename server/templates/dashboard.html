@@ -104,6 +104,7 @@ body { font-family: system-ui, -apple-system, sans-serif; background: #f5f7fa; o
     <a data-section="section-campaign"><i class="bi bi-send"></i> Send Campaign</a>
     <a data-section="section-uploads"><i class="bi bi-upload"></i> Uploads</a>
     <a data-section="section-history"><i class="bi bi-clock-history"></i> Campaign History</a>
+    <a data-section="section-roadmap"><i class="bi bi-signpost-2"></i> Roadmap</a>
   </nav>
   <div class="sidebar-footer">OFLIFO &mdash; Daily Psalms</div>
 </div>
@@ -252,6 +253,24 @@ God bless!</textarea>
         {% else %}
         <div class="empty-state"><i class="bi bi-inbox"></i><p>No campaigns sent yet.</p></div>
         {% endif %}
+      </div>
+    </div>
+
+    <!-- ======= ROADMAP ======= -->
+    <div id="section-roadmap" class="page-section">
+      <div class="content-card">
+        <h3>Feature Build Checklist</h3>
+        <p style="color:#888;font-size:13px;margin-bottom:20px">Features planned to enhance user experience and encourage donations. Update status as you go.</p>
+
+        <div style="display:grid;gap:12px" id="roadmap-list"></div>
+
+        <div style="margin-top:20px;padding-top:16px;border-top:1px solid #eee;font-size:13px;color:#888">
+          <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#ddd;vertical-align:middle;margin-right:4px"></span> Planned
+          &nbsp;&nbsp;
+          <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#ffc107;vertical-align:middle;margin-right:4px"></span> In Progress
+          &nbsp;&nbsp;
+          <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#2d6a4f;vertical-align:middle;margin-right:4px"></span> Built
+        </div>
       </div>
     </div>
 
@@ -453,8 +472,45 @@ function viewUpload(id) {
     });
 }
 
+// --- Roadmap ---
+var roadmap = [
+  { feature: "Share buttons", desc: "WhatsApp, Twitter, Facebook share for each daily psalm", status: "planned" },
+  { feature: "Testimonials wall", desc: "Users share how the psalms helped them — builds community trust", status: "planned" },
+  { feature: "Prayer requests", desc: "Allow people to submit prayer requests via the site", status: "planned" },
+  { feature: "Audio psalms", desc: "Listen to the daily verse instead of reading", status: "planned" },
+  { feature: "Progress tracker", desc: "Day 45 of 150 — shows commitment, encourages completion", status: "planned" },
+  { feature: "Subscriber count", desc: "Show 'Join 200+ subscribers' — social proof to encourage signups", status: "planned" },
+  { feature: "Weekly digest", desc: "Email option for those who prefer weekly vs daily psalms", status: "planned" },
+  { feature: "Donation goal bar", desc: "Visual progress toward a monthly support target", status: "planned" },
+  { feature: "Verse art generator", desc: "Auto-generated shareable image of the daily verse", status: "planned" },
+];
+
+function renderRoadmap() {
+  var html = '';
+  roadmap.forEach(function(item, index) {
+    var statusColors = { planned: '#ddd', 'in progress': '#ffc107', built: '#2d6a4f' };
+    var statusLabels = { planned: 'Planned', 'in progress': 'In Progress', built: 'Built' };
+    var color = statusColors[item.status] || '#ddd';
+    html += '<div style="background:#f8f9fa;border-radius:10px;padding:16px 20px;display:flex;align-items:center;gap:16px">';
+    html += '<span style="width:14px;height:14px;border-radius:50%;background:'+color+';flex-shrink:0"></span>';
+    html += '<div style="flex:1"><strong style="font-size:14px">'+esc(item.feature)+'</strong><br><span style="font-size:12px;color:#888">'+esc(item.desc)+'</span></div>';
+    html += '<select class="form-select form-select-sm" style="width:130px" onchange="updateRoadmapStatus('+index+',this.value)">';
+    html += '<option value="planned"'+(item.status==='planned'?' selected':'')+'>Planned</option>';
+    html += '<option value="in progress"'+(item.status==='in progress'?' selected':'')+'>In Progress</option>';
+    html += '<option value="built"'+(item.status==='built'?' selected':'')+'>Built</option>';
+    html += '</select></div>';
+  });
+  document.getElementById('roadmap-list').innerHTML = html;
+}
+
+function updateRoadmapStatus(index, status) {
+  roadmap[index].status = status;
+  renderRoadmap();
+}
+
 loadContacts();
 loadUploads();
+renderRoadmap();
 </script>
 </body>
 </html>

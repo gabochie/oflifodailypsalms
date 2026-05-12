@@ -1,0 +1,6 @@
+.env
+server/analytics.db
+server/analytics.db-wal
+server/analytics.db-shm
+__pycache__/
+*.pyc
