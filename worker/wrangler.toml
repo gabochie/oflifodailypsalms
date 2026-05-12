@@ -1,0 +1,11 @@
+name = "oflifo-api"
+main = "src/index.js"
+compatibility_date = "2025-04-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "oflifo-db"
+database_id = ""
+
+[env.production]
+vars = { ENVIRONMENT = "production" }
